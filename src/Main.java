@@ -10,6 +10,9 @@ public class Main {
         System.out.println("Inserisci l'operatore: ");
         System.out.println("+ per addizione, - per sottrazione, * per moltiplicazione, / per divisione, ^ per potenza, p per pari o dispari");
         char operator = scanner.next().charAt(0);
+        if(operator=='^'){
+            System.out.println("Inserisci la base e successivamente l'esponente");
+        }
         float num2 = 0;
         if(operator != 'p') {
             System.out.println("Inserisci il secondo valore: ");
