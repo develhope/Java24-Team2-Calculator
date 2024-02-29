@@ -3,63 +3,105 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Inserisci il primo valore: ");
+        System.out.print("Inserisci il numero di valori su cui eseguire l'operazione: ");
+        // creazione scanner per prendere in input
         Scanner scanner = new Scanner(System.in);
-        float num1;
-        num1 = scanner.nextFloat();
+        // prendiamo il numero dei valori
+        int dimensione = scanner.nextInt();
+
+        // creazione array vuoto
+        float[] arrayList;
+        arrayList = new float[dimensione];
+        // riempimento array con input dell'utente
+        System.out.println("Inserisci i valori:");
+        for (int i = 0; i < dimensione; i++) {
+            arrayList[i] = scanner.nextFloat();
+        }
+
         System.out.println("Inserisci l'operatore: ");
+
         System.out.println("+ per addizione, - per sottrazione, * per moltiplicazione, / per divisione, ^ per potenza, p per pari o dispari");
+
         char operator = scanner.next().charAt(0);
-        if(operator=='^'){
-            System.out.println("Inserisci la base e successivamente l'esponente");
-        }
-        float num2 = 0;
-        if(operator != 'p') {
-            System.out.println("Inserisci il secondo valore: ");
-            num2 = scanner.nextFloat();
-            checkOperation(operator, num1, num2);
-        } else {
-            System.out.println(evenOdd(num1));
-        }
+
+       /* if(operator=='^'){
+            System.out.println("Inserisci la base e successivamente l'esponente: ");
+            checkOperation(operator,arrayList);
+        } */
+
+        if (operator != 'p') {
+            checkOperation(operator, arrayList);
+        } /* else {
+            System.out.println(evenOdd(arrayList));
+        }*/
     }
 
-    public static void checkOperation(char operator, float num1, float num2) {
+    public static void checkOperation(char operator, float[] array) {
         switch (operator) {
             case '+':
                 System.out.println("SOMMA");
-                System.out.println(addition(num1, num2));
+                System.out.println(addition(array));
                 break;
             case '-':
                 System.out.println("DIFFERENZA");
-                System.out.println(sub(num1, num2));
+                System.out.println(subtraction(array));
                 break;
             case '*':
                 System.out.println("MOLTIPLICAZIONE");
-                System.out.println(multi(num1, num2));
+                System.out.println(multiplication(array));
                 break;
             case '/':
                 System.out.println("DIVISIONE");
-                System.out.println(div(num1, num2));
+                System.out.println(division(array));
                 break;
-            case '^':
+         /*   case '^':
                 System.out.println("POTENZA");
-                System.out.println(pow(num1, num2));
+                System.out.println(pow(array));
                 break;
             case 'p':
-                System.out.println(evenOdd(num1));
-                break;
+                System.out.println(evenOdd(array);
+                break;*/
+            default:
+                System.out.println("Operatore inserito non valido");
         }
+
     }
 
-    public static float addition (float num1, float num2) {
-        return num1 + num2;
+    public static float addition(float[] array) {
+        float sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            sum += array[i];
+        }
+        return sum;
+
     }
-    public static float multi(float num1, float num2) {
-        return num1 * num2;
+
+    public static float subtraction(float[] array) {
+        float sub = 0;
+        for (int i = 0; i < array.length; i++) {
+            sub -= array[i];
+        }
+        return sub;
+
     }
-    public static double pow(float num1, float num2){
-        return Math.pow(num1,num2);
+
+    public static float multiplication(float[] array) {
+        float multi = 1;
+        for (int i = 0; i < array.length; i++) {
+            multi *= array[i];
+        }
+        return multi;
+    }
+
+    public static float division(float[] array) {
+        float div = array[0];
+        for (int i = 1; i < array.length; i++) {
+
+            div /= array[i];
+        }
+        return div;
     }
 }
+
 
 
