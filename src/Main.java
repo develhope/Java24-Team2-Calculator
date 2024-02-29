@@ -54,12 +54,19 @@ public class Main {
     public static float addition (float num1, float num2) {
         return num1 + num2;
     }
+
     public static float multi(float num1, float num2) {
         return num1 * num2;
     }
     public static double pow(float num1, float num2){
         return Math.pow(num1,num2);
     }
+
+    public static float sub (float num1, float num2) {
+        return num1 - num2;
+    }
+
+
 }
 
 
