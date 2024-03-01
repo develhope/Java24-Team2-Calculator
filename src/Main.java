@@ -20,20 +20,12 @@ public class Main {
 
         System.out.println("Inserisci l'operatore: ");
 
-        System.out.println("+ per addizione, - per sottrazione, * per moltiplicazione, / per divisione, ^ per potenza, p per pari o dispari");
+        System.out.println("+ per addizione, - per sottrazione, * per moltiplicazione, / per divisione, p per pari o dispari");
 
         char operator = scanner.next().charAt(0);
 
-       /* if(operator=='^'){
-            System.out.println("Inserisci la base e successivamente l'esponente: ");
-            checkOperation(operator,arrayList);
-        } */
+        checkOperation(operator, arrayList);
 
-        if (operator != 'p') {
-            checkOperation(operator, arrayList);
-        } /* else {
-            System.out.println(evenOdd(arrayList));
-        }*/
     }
 
     public static void checkOperation(char operator, float[] array) {
@@ -54,13 +46,10 @@ public class Main {
                 System.out.println("DIVISIONE");
                 System.out.println(division(array));
                 break;
-         /*   case '^':
-                System.out.println("POTENZA");
-                System.out.println(pow(array));
-                break;
+
             case 'p':
-                System.out.println(evenOdd(array);
-                break;*/
+                evenOdd(array);
+                break;
             default:
                 System.out.println("Operatore inserito non valido");
         }
@@ -69,8 +58,8 @@ public class Main {
 
     public static float addition(float[] array) {
         float sum = 0;
-        for (int i = 0; i < array.length; i++) {
-            sum += array[i];
+        for (float v : array) {
+            sum += v;
         }
         return sum;
 
@@ -78,8 +67,8 @@ public class Main {
 
     public static float subtraction(float[] array) {
         float sub = 0;
-        for (int i = 0; i < array.length; i++) {
-            sub -= array[i];
+        for (float v : array) {
+            sub -= v;
         }
         return sub;
 
@@ -87,8 +76,8 @@ public class Main {
 
     public static float multiplication(float[] array) {
         float multi = 1;
-        for (int i = 0; i < array.length; i++) {
-            multi *= array[i];
+        for (float v : array) {
+            multi *= v;
         }
         return multi;
     }
@@ -100,6 +89,16 @@ public class Main {
             div /= array[i];
         }
         return div;
+    }
+
+    public static void evenOdd(float[] array) {
+        for (float v : array) {
+            if (v % 2 == 0) {
+                System.out.println("Il numero " + v + " è pari");
+            } else {
+                System.out.println("Il numero " + v + " è dispari");
+            }
+        }
     }
 }
 
