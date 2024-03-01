@@ -82,13 +82,16 @@ public class Main {
         return multi;
     }
 
-    public static float division(float[] array) {
+    public static String division(float[] array) {
         float div = array[0];
+        float rest= array[0];
         for (int i = 1; i < array.length; i++) {
 
             div /= array[i];
+            rest %= array[i];
         }
-        return div;
+        return "Il quoziente è " + div + " con resto di " + rest;
+
     }
 
     public static void evenOdd(float[] array) {
