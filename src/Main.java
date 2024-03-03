@@ -13,7 +13,7 @@ public class Main {
         if(operator=='^'){
             System.out.println("Inserisci la base e successivamente l'esponente");
         }
-        float num2 = 0;
+        float num2;
         if(operator != 'p') {
             System.out.println("Inserisci il secondo valore: ");
             num2 = scanner.nextFloat();
@@ -65,7 +65,19 @@ public class Main {
     public static float sub (float num1, float num2) {
         return num1 - num2;
     }
+    public static String div(float num1, float num2) {
+        float quoziente = num1 / num2;
+        float resto = num1 % num2;
+        return "Quoziente = " + quoziente + ", Resto = " + resto;
+    }
+    public static String evenOdd(float num1) {
+        int typeNumber = (int) num1 % 2;
 
+        if (typeNumber == 0) {
+            return "Pari";
+        }
+        return "Dispari";
+    }
 
 }
 
