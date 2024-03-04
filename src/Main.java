@@ -3,16 +3,16 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Inserisci il primo valore: ");
-        Scanner scanner = new Scanner(System.in);
-        float num1;
-        num1 = scanner.nextFloat();
         System.out.println("Inserisci l'operatore: ");
         System.out.println("+ per addizione, - per sottrazione, * per moltiplicazione, / per divisione, ^ per potenza, p per pari o dispari");
+        Scanner scanner = new Scanner(System.in);
         char operator = scanner.next().charAt(0);
         if(operator=='^'){
             System.out.println("Inserisci la base e successivamente l'esponente");
         }
+        System.out.println("Inserisci il primo valore: ");
+        float num1;
+        num1 = scanner.nextFloat();
         float num2;
         if(operator != 'p') {
             System.out.println("Inserisci il secondo valore: ");
